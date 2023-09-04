@@ -1,0 +1,64 @@
+<form #form="ngForm" autocomplete="off" *ngIf="studentSvc.studentData" (submit)="onSubmit(form)">
+    <img [src]="ProfileImg" class="rounded mx-auto d-block" style="border-style: solid; border-color: black;margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>First Name</label>
+                <input name="FirstName" #FirstName="ngModel" [(ngModel)]="studentSvc.studentData.FirstName" class="form-control"
+                [class.is-invalid] = "!isValid && studentSvc.studentData.FirstName == '' ">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Last Name</label>
+                <input name="LastName" #LastName="ngModel" [(ngModel)]="studentSvc.studentData.LastName" class="form-control"
+                [class.is-invalid] = "!isValid && studentSvc.studentData.LastName == '' ">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Mobile</label>
+                <input name="Mobile" #Mobile="ngModel" [(ngModel)]="studentSvc.studentData.Mobile" class="form-control"
+                [class.is-invalid] = "!isValid && studentSvc.studentData.Mobile == '' ">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Email</label>
+                <input name="Email" #Email="ngModel" [(ngModel)]="studentSvc.studentData.Email" class="form-control"
+                [class.is-invalid] = "!isValid && studentSvc.studentData.Email == '' ">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>NIC</label>
+                <input name="NIC" #NIC="ngModel" [(ngModel)]="studentSvc.studentData.NIC" class="form-control"
+                [class.is-invalid] = "!isValid && studentSvc.studentData.NIC == '' ">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Date Of Birth</label>
+                <input type="date" name="DateOfBirth" #NIC="ngModel" [(ngModel)]="studentSvc.studentData.DateOfBirth" class="form-control"
+                [class.is-invalid] = "!isValid && studentSvc.studentData.DateOfBirth == null ">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Address</label>
+                <input name="Address" #Address="ngModel" [(ngModel)]="studentSvc.studentData.Address" class="form-control"
+                [class.is-invalid] = "!isValid && studentSvc.studentData.Address == '' ">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+    </div>
+</form>
