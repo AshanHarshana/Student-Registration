@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Student_RegistrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="StudentDetail">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Mobile" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="NIC" Type="char" MaxLength="15" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Address" Type="varchar" MaxLength="1000" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="AddUser" Type="varchar" MaxLength="50" />
+    <Property Name="AddDate" Type="datetime" />
+    <Property Name="ModUser" Type="varchar" MaxLength="50" />
+    <Property Name="ModDate" Type="datetime" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="DelUser" Type="varchar" MaxLength="50" />
+    <Property Name="DelDate" Type="datetime" />
+    <Property Name="DelComment" Type="varchar" MaxLength="1000" />
+    <Property Name="Picture" Type="image" />
+  </EntityType>
+  <EntityContainer Name="Student_RegistrationModelStoreContainer">
+    <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

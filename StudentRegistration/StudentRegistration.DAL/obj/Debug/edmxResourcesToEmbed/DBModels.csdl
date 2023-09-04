@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Student_RegistrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="StudentDetail">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NIC" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="AddUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="ModUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <Property Name="DelUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DelDate" Type="DateTime" Precision="3" />
+    <Property Name="DelComment" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" />
+  </EntityContainer>
+</Schema>
